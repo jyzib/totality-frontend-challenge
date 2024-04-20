@@ -51,9 +51,10 @@ function NavbarBody({ className }: { className?: string }) {
   <span className="text-white absolute right-[-10px] top-[-10px] bg-red-500 z-10 w-[20px] h-[20px] flex items-center justify-center rounded-full " >{cart.length}</span>
         <MenuItem setActive={setActive} active={active} item="cart">
           <div className=" text-sm grid grid-cols-1 gap-10 p-4">
-            {cart.map((e)=>{
+            {cart.map((e,i)=>{
               return (
                 <ProductItem
+                key={i}
                 title={e.title}
                 href="#"
                 src={e.images[0]}
