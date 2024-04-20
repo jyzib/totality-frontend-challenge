@@ -37,10 +37,10 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-wrap gap-10">
-          {filterdata.map((e) => {
+          {filterdata.map((e,i) => {
             return (
             
-                <Card key={e._id} e={e} />
+                <Card key={i} e={e} />
             
             );
           })}
