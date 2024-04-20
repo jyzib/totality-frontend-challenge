@@ -87,7 +87,9 @@ function NavbarBody({ className }: { className?: string }) {
 </SignedIn>
 <SignedOut>
 
-    <SignInButton style={{color:'black'}} mode="modal" afterSignInUrl="/" afterSignUpUrl="/"  />
+    <SignInButton mode="modal" afterSignInUrl="/" afterSignUpUrl="/"  >
+      <p className="text-black cursor-pointer " >Sign In</p>
+    </SignInButton>
 </SignedOut>
     </ClerkLoaded>
 </div>
