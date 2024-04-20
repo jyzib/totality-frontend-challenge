@@ -29,7 +29,7 @@ console.log(properties)
       <div className="flex flex-wrap gap-10">
       {properties.map((e)=>{
   return (
-    <div className="w-[300px] bg-white p-2 rounded-md">
+    <div key={e._id} className="w-[300px] bg-white p-2 rounded-md">
       <div className="h-[200px] overflow-hidden object-contain"><Image className="rounded-md" src={e.images[0]} width={200} height={200} layout="responsive" alt={e.title} /></div>
 <div className="flex flex-col gap-y-2">
       <h1 className="text-gray-800 font-bold">{e.title}</h1>  
