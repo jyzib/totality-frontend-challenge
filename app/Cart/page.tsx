@@ -1,8 +1,9 @@
-"use client";
+"use client"
 import React from "react";
 import { useContext } from "react";
 import cartcontext from "@/context/CartContext";
 import PaymentForm from "../components/PaymentPage";
+
 interface CartItem {
   _id: number;
   title: string;
@@ -17,7 +18,7 @@ interface UserDetails {
 }
 
 const CheckoutPage: React.FC = () => {
-  const { cart, setCart,user } = useContext(cartcontext);
+  const { cart, setCart, user } = useContext(cartcontext);
 
   const userDetails: UserDetails = {
     fullName: "John Doe",
@@ -25,36 +26,27 @@ const CheckoutPage: React.FC = () => {
     email: "john@example.com",
   };
 
-    const calculateTotal = () => {
-      return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-    };
-
-  const handeldecrease = (x) => {
-    let newarrr = [...cart];
-    if (x.quantity == 1) {
-      newarrr = newarrr.filter((e) => e._id !== x._id);
-      
-      setCart(newarrr);
-    } else {
-      for (let i = 0; i < newarrr.length; i++) {
-        if (newarrr[i]._id == x._id) {
-          newarrr[i].quantity = newarrr[i].quantity - 1;
-        }
-      }
-
-      setCart(newarrr);
-    }
-    // console.log(newarrr)
+  const calculateTotal = (): number => {
+    return cart.reduce((total:any, item:any) => total + item.price * item.quantity, 0);
   };
-  const handelincrease = (x) => {
-    let newarrr = [...cart];
-    for (let i = 0; i < newarrr.length; i++) {
-        if (newarrr[i]._id == x._id) {
-          newarrr[i].quantity = newarrr[i].quantity + 1;
-        }
-      }
 
-      setCart(newarrr);
+  const handleDecrease = (item: CartItem): void => {
+    let newCart = [...cart];
+    if (item.quantity === 1) {
+      newCart = newCart.filter((cartItem) => cartItem._id !== item._id);
+    } else {
+      newCart = newCart.map((cartItem) =>
+        cartItem._id === item._id ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
+      );
+    }
+    setCart(newCart);
+  };
+
+  const handleIncrease = (item: CartItem): void => {
+    const newCart = cart.map((cartItem:any) =>
+      cartItem._id === item._id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+    );
+    setCart(newCart);
   };
 
   return (
@@ -63,13 +55,13 @@ const CheckoutPage: React.FC = () => {
         <div className="bg-gray-100 p-6">
           <h2 className="text-lg font-semibold mb-4">Cart Items</h2>
           <ul>
-            {cart.map((item: CartItem) => (
+            {cart?.map((item: CartItem) => (
               <li key={item._id} className="m-5 p-5">
                 <span>{item.title}</span> - <span>${item.price}</span>{" "}
-                <button onClick={() => handeldecrease(item)}>-</button>{" "}
+                <button onClick={() => handleDecrease(item)}>-</button>{" "}
                 <span>
                   {item.quantity}{" "}
-                  <button onClick={() => handelincrease(item)}> +</button>
+                  <button onClick={() => handleIncrease(item)}>+</button>
                 </span>
               </li>
             ))}
@@ -78,29 +70,27 @@ const CheckoutPage: React.FC = () => {
         <div className="bg-gray-100 p-6">
           <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
           <div className="mb-4">
-            {/* <strong>Total Items:</strong> {cartItems.length} */}
+            <strong>Total Items:</strong> {cart?.length}
           </div>
           <div className="mb-4">
             <strong>Total Amount:</strong> ${calculateTotal().toFixed(2)}
           </div>
           <div className="mb-4">
-            <strong>Full Name:</strong> {user?.user?.firstName +` `+ user?.user?.lastName}
+            <strong>Full Name:</strong> {user?.user?.firstName + ` ` + user?.user?.lastName}
           </div>
           <div className="mb-4">
-            <strong>Address:</strong> {user?.user?.emailAddresses[0]?.emailAddress}
+            <strong>Address:</strong>{" "}
+            {user?.user?.emailAddresses?.[0]?.emailAddress}
           </div>
           <div className="mb-4">
-            <strong>Email:</strong> {user?.user?.emailAddresses[0]?.emailAddress}
+            <strong>Email:</strong>{" "}
+            {user?.user?.emailAddresses?.[0]?.emailAddress}
           </div>
-          <div
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-       
-          >
-          <PaymentForm/>
+          <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <PaymentForm />
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
