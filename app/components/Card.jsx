@@ -3,8 +3,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useContext } from "react";
 import cartcontext from "@/context/CartContext";
+import { useRouter } from 'next/navigation'
+import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast"
 export function Card({ e }) {
+  const router = useRouter()
   const { toast } = useToast()
  
   const [added, setaddedflag] = useState(false);
@@ -22,22 +25,15 @@ function tostdisplay(ele){
      tostdisplay(ele.title)
     
    }else{
-    if (added) {
-      const filterdata = cart.filter((element) => {
-        return element._id !== ele._id;
-      });
-      setCart([...filterdata]);
-    } else {
-      setCart([...cart, ele]);
-    }
-    setaddedflag(!added);
+    console.log('dd')
+    router.push(`/${ele._id}`)
   }
-    // console.log(cart)
   };
 
   return (
     <div className="w-[300px] bg-white p-2 rounded-md">
       <div className="h-[200px] overflow-hidden object-contain">
+      <Link href={`/${e._id}`} >
         <Image
           className="rounded-md"
           src={e.images[0]}
@@ -46,6 +42,7 @@ function tostdisplay(ele){
           layout="responsive"
           alt={e.title}
         />
+      </Link>
       </div>
       <div className="flex flex-col gap-y-2">
         <h1 className="text-gray-800 font-bold">{e.title}</h1>

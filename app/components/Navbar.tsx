@@ -5,7 +5,7 @@ import { cn } from "@/app/utils/cn";
 import Link from "next/link";
 import { Loader } from "lucide-react";
 import  cartcontext  from "@/context/CartContext";
-import { ShoppingCart } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 import { useContext } from "react";
 import { ClerkLoaded,ClerkLoading ,SignedIn,SignedOut,SignInButton, UserButton } from "@clerk/nextjs";
 import UserData from './UserData'
@@ -39,8 +39,8 @@ function NavbarBody({ className }: { className?: string }) {
       <Menu  setActive={setActive}>
         <div className="flex  w-full justify-between">
          
-        <div className=""><h1 className="text-black" > <Link href={'/'}>logo</Link> </h1></div>
-        <div className="flex gap-x-9">
+       <div className=""><h1 className="text-black" > <Link href={'/'}><HomeIcon className="text-blue-900 "  size={40}/></Link> </h1></div>
+       <div className="flex gap-x-9">
       <Link className="text-gray-700" href={'/'}>
       About Us
       </Link>
