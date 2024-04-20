@@ -76,17 +76,18 @@ function NavbarBody({ className }: { className?: string }) {
 <div className="">
     <ClerkLoading>
 
-<Loader className="animate-spin" />
+<Loader className="text-black animate-spin" />
     </ClerkLoading>
     <ClerkLoaded>
 
 <SignedIn>
     <UserButton afterSignOutUrl="/">
-  
+
     </UserButton>
 </SignedIn>
 <SignedOut>
-    <SignInButton mode="modal" afterSignInUrl="/" afterSignUpUrl="/" />
+
+    <SignInButton style={{color:'black'}} mode="modal" afterSignInUrl="/" afterSignUpUrl="/"  />
 </SignedOut>
     </ClerkLoaded>
 </div>

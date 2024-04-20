@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
-import { HoverEffect } from "./components/ui/card-hover-effect";
-import {CardHoverEffect} from "./components/Card";
+// import { HoverEffect } from "./components/ui/card-hover-effect";
+import {Card} from "./components/Card";
 import {getproperty} from '../_actions/propertyaction.js';
 import {ImagesSliderDemo} from './components/HeroSection'
 import FilterData from "./components/FilterData";
@@ -371,15 +371,27 @@ export default  function Home() {
 <>
 
 <ImagesSliderDemo/>
+
+
+
 <FilterData properties={data} setfilterdata={setfilterdata} />
-{/* {properties.map((e)=>{
+
+
+<div className="w-full mx-auto px-8 mt-11">
+      <div className="md:ml-5 flex flex-col gap-y-3">      <h1 className="text-3xl text-slate-700 font-semibold">Spacein Exclusives</h1>
+      <p className=" text-slate-700" >Discover unique spaces not listed elsewhere.</p>
+      </div>
+      <div className="flex flex-wrap gap-10">
+{filterdata.map((e)=>{
   return (
-    <h1>{e.title}</h1>  
+    <h1><Card e={e}/></h1>  
   )
 
-})} */}
- {/* <HoverEffect items={datafil} /> */}
-<CardHoverEffect properties={filterdata} />
+})} 
+</div>
+</div>
+
+{/* <CardHoverEffect properties={filterdata} /> */}
 </>
 
   );
