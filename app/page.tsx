@@ -13,6 +13,7 @@ export default function Home() {
   const getProperty = async () => {
     const response = await fetch("/api/PropertyListings");
     const data = await response.json();
+    console.log(data)
     setfilterdata(data?.data);
     setList(data?.data);
   };
@@ -37,7 +38,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-wrap gap-10">
-          {filterdata.map((e,i) => {
+          {filterdata?.map((e,i) => {
             return (
             
                 <Card key={i} e={e} />

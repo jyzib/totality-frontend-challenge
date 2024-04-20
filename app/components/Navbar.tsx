@@ -4,8 +4,14 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navba
 import { cn } from "@/app/utils/cn";
 import Link from "next/link";
 import { Loader } from "lucide-react";
+import  cartcontext  from "@/context/cartContext";
+import { ShoppingCart } from "lucide-react";
+import { useContext } from "react";
 import { ClerkLoaded,ClerkLoading ,SignedIn,SignedOut,SignInButton, UserButton } from "@clerk/nextjs";
+import UserData from './UserData'
 export function Navbar() {
+ 
+  // console.log(g)
   return (
     <div className="relative w-full flex items-center justify-center">
       <NavbarBody className="top-2 bg-red-100x" />
@@ -15,14 +21,18 @@ export function Navbar() {
 }
 
 function NavbarBody({ className }: { className?: string }) {
+  const {cart} = useContext(cartcontext)
+  // const [item,setItem] = useState(cart)
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
       className={cn("fixed top-10 inset-x-0 w-4/5 mx-auto z-50  ", className)}
     >
+     
       <Menu  setActive={setActive}>
         <div className="flex  w-full justify-between">
-        <div className=""><h1 className="text-black" >logo</h1></div>
+         
+        <div className=""><h1 className="text-black" > <Link href={'/'}>logo</Link> </h1></div>
         <div className="flex gap-x-9">
       <Link className="text-gray-700" href={'/'}>
       About Us
@@ -35,35 +45,27 @@ function NavbarBody({ className }: { className?: string }) {
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div>
         </MenuItem>
+        {/* <ShoppingCart className="text-black" /> */}
 
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-            <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
-            />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
+<div className="relative">
+  <span className="text-white absolute right-[-10px] top-[-10px] bg-red-500 z-10 w-[20px] h-[20px] flex items-center justify-center rounded-full " >{cart.length}</span>
+        <MenuItem setActive={setActive} active={active} item="cart">
+          <div className=" text-sm grid grid-cols-1 gap-10 p-4">
+            {cart.map((e)=>{
+              return (
+                <ProductItem
+                title={e.title}
+                href="#"
+                src={e.images[0]}
+                description={e.description}
+              />
+              )
+            })}
+          
+         
           </div>
         </MenuItem>
+        </div>
         <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>

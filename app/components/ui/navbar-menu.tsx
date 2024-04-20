@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { ShoppingCart } from "lucide-react";
 
 const transition = {
   type: "spring",
@@ -30,7 +31,7 @@ export const MenuItem = ({
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] "
       >
-        {item}
+        {item=='cart' ? <Link href={'/Cart'} ><ShoppingCart className="text-black" /></Link>  : item}
       </motion.p>
       {active !== null && (
         <motion.div
