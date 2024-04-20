@@ -12,7 +12,7 @@ export function Card({ e }) {
 function tostdisplay(ele){
   
     toast({
-      title: `You Need to Login to add ${ele} in your cart`,
+      title: `You Need  to Login to add ${ele} in your cart`,
     
     })
   
