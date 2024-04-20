@@ -19,7 +19,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang='en'>
 
-      <body>
+      <body className="mx-5 md:mx-10 ">
       <Navbar/>
         {children}
         

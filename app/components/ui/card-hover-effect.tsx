@@ -2,7 +2,8 @@ import { cn } from "../../utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-
+import Image from "next/image";
+import { Heart } from "lucide-react";
 export const HoverEffect = ({
   items,
   className,
@@ -10,7 +11,7 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    _id: string;
   }[];
   className?: string;
 }) => {
@@ -25,8 +26,8 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
-          key={item?.link}
+          href={item?._id}
+          key={item?._id}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -34,7 +35,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-600 dark:bg-slate-600/[0.8] block  rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -49,8 +50,13 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
+          <div className="w-full rounded-lg overflow-hidden">
+            <div className="text-white absolute right-5 top-5 "><Heart  fill="#8E8E8E" /></div>
+      <Image src='https://a0.muscache.com/im/pictures/c051c636-3a9d-4cf5-84de-c7226fc6bfd6.jpg?im_w=720' alt='img' width={200} height={100} layout="responsive" />
+    </div>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+             <p className="text-black"><b> ₹ 8,675</b> night </p>
           </Card>
         </Link>
       ))}
@@ -68,7 +74,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white  border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
@@ -86,7 +92,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn("text-black font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );
@@ -101,7 +107,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-1 mb-2   text-gray-600 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

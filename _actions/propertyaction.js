@@ -7,7 +7,7 @@ export async function getproperty(){
     try {
         await connectDB();
         const data = await propertyModel.find()
-        return {msg:data}
+        return {data}
     } catch (error) {
         console.log(error)
     }

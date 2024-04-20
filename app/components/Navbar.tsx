@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navbar-menu";
 import { cn } from "@/app/utils/cn";
+import Link from "next/link";
 import { Loader } from "lucide-react";
 import { ClerkLoaded,ClerkLoading ,SignedIn,SignedOut,SignInButton, UserButton } from "@clerk/nextjs";
 export function Navbar() {
@@ -17,10 +18,16 @@ function NavbarBody({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn("fixed top-10 inset-x-0 w-4/5 mx-auto z-50  ", className)}
     >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+      <Menu  setActive={setActive}>
+        <div className="flex  w-full justify-between">
+        <div className=""><h1 className="text-black" >logo</h1></div>
+        <div className="flex gap-x-9">
+      <Link className="text-gray-700" href={'/'}>
+      About Us
+      </Link>
+        <MenuItem setActive={setActive} active={active} item="About Us">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
             <HoveredLink href="/interface-design">Interface Design</HoveredLink>
@@ -28,9 +35,6 @@ function NavbarBody({ className }: { className?: string }) {
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div>
         </MenuItem>
-<input className="text-black"/>
-
-
 
         <MenuItem setActive={setActive} active={active} item="Products">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
@@ -85,6 +89,8 @@ function NavbarBody({ className }: { className?: string }) {
     <SignInButton mode="modal" afterSignInUrl="/" afterSignUpUrl="/" />
 </SignedOut>
     </ClerkLoaded>
+</div>
+</div>
 </div>
 
       </Menu>
