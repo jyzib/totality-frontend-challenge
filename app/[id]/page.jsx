@@ -6,7 +6,7 @@ import { Locate,Boxes,Star ,Loader} from 'lucide-react'
 import cartcontext from '@/context/CartContext'
 // import { Hourglass } from 'lucide-react'
 import { Home } from 'lucide-react'
-const page = ({params}) => {
+const Page = ({params}) => {
     const [ loading,setLoading] =useState(true)
   const [added, setaddedflag] = useState(false);
   const { setCart, cart, user } = useContext(cartcontext);
@@ -77,10 +77,10 @@ const page = ({params}) => {
           </div>
     <h1 className='text-xl mt-5 font-bold' > Amenities</h1>             
 <div className="grid grid-cols-2 gap-5">
-{property[0]?.amenities.map((e)=>{
+{property[0]?.amenities.map((e,index)=>{
 return(
     
-    <div className="flex bg-white gap-x-5 w-full  items-center  mt-5 p-4 rounded-2xl shadow-xl">
+    <div key={index} className="flex bg-white gap-x-5 w-full  items-center  mt-5 p-4 rounded-2xl shadow-xl">
  <Boxes/>
     <p>{e}</p>
      </div>
@@ -142,4 +142,4 @@ return(
   )
 }
 
-export default page
+export default Page
