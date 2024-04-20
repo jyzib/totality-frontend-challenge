@@ -39,9 +39,9 @@ export default function Home() {
         <div className="flex flex-wrap gap-10">
           {filterdata.map((e) => {
             return (
-              <h1>
-                <Card e={e} />
-              </h1>
+            
+                <Card key={e._id} e={e} />
+            
             );
           })}
         </div>
