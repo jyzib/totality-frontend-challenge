@@ -24,7 +24,7 @@ function NavbarBody({ className }: { className?: string }) {
   const {cart} = useContext(cartcontext)
   // const [item,setItem] = useState(cart)
   interface CartItem {
-    _id:String;
+    _id:any;
     title: string;
     images: string[];
     description: string;
