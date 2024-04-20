@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useContext } from "react";
-import cartcontext from "@/context/cartContext";
+import cartcontext from "@/context/CartContext";
 import { useToast } from "@/components/ui/use-toast"
 export function Card({ e }) {
   const { toast } = useToast()

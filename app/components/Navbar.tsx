@@ -4,7 +4,7 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navba
 import { cn } from "@/app/utils/cn";
 import Link from "next/link";
 import { Loader } from "lucide-react";
-import  cartcontext  from "@/context/cartContext";
+import  cartcontext  from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
 import { useContext } from "react";
 import { ClerkLoaded,ClerkLoading ,SignedIn,SignedOut,SignInButton, UserButton } from "@clerk/nextjs";

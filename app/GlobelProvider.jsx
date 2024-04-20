@@ -1,5 +1,5 @@
 
-import { CartProvider } from '../context/cartContext'
+import { CartProvider } from '../CartContext/cartContext'
 const GlobelProvider = ({children}) => {
   return (
    <CartProvider>
