@@ -352,26 +352,26 @@ let data = [
   },
 ]
 export default  function Home() {
-  const [filterdata,setfilterdata] = useState([])
+  const [filterdata,setfilterdata] = useState(data)
   const [list,setList] = useState([])
 
-  const getProperty =async ()=>{
-  const response = await fetch('/api/PropertyListings')
-  const data = await response.json()
-  setfilterdata(data?.data?.data)
-  setList(data?.data?.data)
-  console.log(data?.data?.data) 
-  }
+//   const getProperty =async ()=>{
+//   const response = await fetch('/api/PropertyListings')
+//   const data = await response.json()
+//   setfilterdata(data?.data?.data)
+//   setList(data?.data?.data)
+//   console.log(data?.data?.data) 
+//   }
 
 
-useEffect(()=>{
-  getProperty()
-},[])
+// useEffect(()=>{
+//   getProperty()
+// },[])
   return (
 <>
 
 <ImagesSliderDemo/>
-<FilterData properties={list} setfilterdata={setfilterdata} />
+<FilterData properties={data} setfilterdata={setfilterdata} />
 {/* {properties.map((e)=>{
   return (
     <h1>{e.title}</h1>  
