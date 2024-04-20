@@ -2,7 +2,7 @@
 import { useState,useEffect } from "react";
 import Image from "next/image";
 
-import { HoverEffect } from "../components/ui/card-hover-effect";
+import { HoverEffect } from "./ui/card-hover-effect";
 
 export function CardHoverEffect({properties}) {
 const [list,setList] = useState([])
