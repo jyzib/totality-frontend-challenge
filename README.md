@@ -65,42 +65,22 @@ This repository contains the solution for the Totality Frontend Challenge, which
    - Display the user's name and avatar when logged in.
    - Protect routes to prevent unauthorized access and provide a nice toast alert message when the user is not signed in.
 
-## Tech Stack:
 
-- **React**: A JavaScript library for building user interfaces.
-- **Next.js**: A React framework for server-side rendering and routing.
-- **TypeScript**: A typed superset of JavaScript for improved code quality and maintainability.
-- **MongoDB**: A NoSQL database for storing property and user data.
-- **Node.js + Express**: A backend framework for implementing server-side logic and APIs.
-- **Nodemailer**: A module for sending emails from Node.js, used for sending booking confirmation emails.
-- **Tailwind CSS**: A utility-first CSS framework for styling the frontend components.
-- **Clerk.js**: A Next.js integration for user authentication and identity management.
-- **Radix UI**: UI components library including dialogs, icons, select components, and sliders.
-- **Lucid React**: UI  library  icons.
-- **Framer Motion**: A React animation library for creating interactive UI.
-- **Mongoose**: MongoDB object modeling for Node.js, used for managing MongoDB data models.
-- **clsx**: Utility for conditionally joining classNames together.
-- **Tailwind CSS Animate**: Tailwind CSS plugin for adding animation utilities.
-- **[shadcn](https://ui.shadcn.com/)**: A UI library for adding components.
-- **aceternity**: A UI library for enhancing component accessibility and usability.
+## Additional Notes
 
-
-## Additional Notes:
-
-- **Deployment**: The application is deployed on [Versel](https://vercel.com/) at [homely hub](https://totality-frontend-challenge-mu.vercel.app/) connect ci/cd pipe line for better developement environment.
-- **MongoDB**: MongoDB Atlas is used as the cloud database service for storing property and user data.
-- **Next.js**: Leveraging Next.js for server-side rendering enhances performance and SEO, providing a smoother user experience.
-- **TypeScript**: Integration of TypeScript ensures type safety, reducing bugs and improving code maintainability.
+- **Deployment**: The application is deployed on [Vercel](https://vercel.com/) at [homely hub](https://totality-frontend-challenge-mu.vercel.app/). A CI/CD pipeline is connected for a better development environment.
+- **MongoDB**: MongoDB Atlas serves as the cloud database service for storing property and user data.
+- **Next.js**: The utilization of Next.js for server-side rendering enhances performance and SEO, resulting in a smoother user experience.
+- **TypeScript**: Integration of TypeScript ensures type safety, reducing bugs and enhancing code maintainability.
 - **Nodemailer**: Nodemailer is configured to send booking confirmation emails to users upon successful booking.
 
-## How to Run Locally:
+## How to Run Locally
 
 1. Clone this repository.
-2. Navigate to the ` totality-frontend-challenge
-` npm install` to install dependencies.
-
+2. Navigate to the `totality-frontend-challenge` directory.
+3. Run `npm install` to install dependencies.
 4. Create a `.env` file in the root directory and add necessary environment variables.
-5. Run `npm run dev` in the `root` directory to start the Development server.
+5. Run `npm run dev` in the root directory to start the Development server.
 6. Access the application at `http://localhost:3000`.
 
 ## Future Improvements:
