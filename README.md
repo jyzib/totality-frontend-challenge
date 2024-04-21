@@ -2,19 +2,27 @@
 
 This repository contains the solution for the Totality Frontend Challenge, which aims to develop a property rental platform with essential features using React. The challenge includes implementing property listings, booking management, checkout process, and ensuring responsive design.
 
-## Tech Stack:
 
-- **React**: Utilized for building the frontend components and managing the application's state.
-- **Next.js**: Employed for server-side rendering and routing, enhancing performance and SEO.
-- **TypeScript**: Used to add static typing for improved code quality and maintainability.
-- **MongoDB**: Integrated for data storage and management of property listings and user information.
-- **Node.js + Express**: Utilized for server-side logic and implementing server actions like sending email booking reports using Nodemailer.
-- **Nodemailer**: Integrated for sending booking confirmation emails to users.
-- **JWT Authentication**: Implemented for user authentication and protecting routes.
-- **Material-UI**: Utilized as a third-party UI library for designing components, ensuring a sleek and consistent UI.
+## Tech Stack
+
+- **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
+- **[Next.js](https://nextjs.org/)**: A React framework for server-side rendering and routing.
+- **[TypeScript](https://www.typescriptlang.org/)**: A typed superset of JavaScript for improved code quality and maintainability.
+- **[MongoDB](https://www.mongodb.com/)**: A NoSQL database for storing property and user data.
+- **[Node.js](https://nodejs.org/)** + **[Express](https://expressjs.com/)**: A backend framework for implementing server-side logic and APIs.
+- **[Nodemailer](https://nodemailer.com/)**: A module for sending emails from Node.js, used for sending booking confirmation emails.
+- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for styling the frontend components.
+- **[Clerk.js](https://clerk.dev/)**: A Next.js integration for user authentication and identity management.
+- **[Radix UI](https://radix-ui.com/)**: UI components library including dialogs, icons, select components, and sliders.
+- **[Lucid React](https://lucid-dream.dev/)**: UI library icons.
+- **[Framer Motion](https://www.framer.com/motion/)**: A React animation library for creating interactive UI.
+- **[Mongoose](https://mongoosejs.com/)**: MongoDB object modeling for Node.js, used for managing MongoDB data models.
+- **[clsx](https://github.com/lukeed/clsx)**: Utility for conditionally joining classNames together.
+- **[Tailwind CSS Animate](https://github.com/bentzibentz/tailwindcss-animatecss)**: Tailwind CSS plugin for adding animation utilities.
+- **[shadcn](https://ui.shadcn.com/)**: A UI library for adding components.
+- **[aceternity](https://aceternity.io/)**: A UI library for enhancing component accessibility and usability.
 
 ## Project Structure:
-
 
 │
 ├── frontend/ # Frontend codebase
@@ -34,29 +42,28 @@ This repository contains the solution for the Totality Frontend Challenge, which
 └── ...
 
 
+
 ## Features Implemented:
 
 1. **Property Listings**:
    - Display various properties with images, titles, descriptions, prices, and booking buttons.
-   - Implement filters for sorting properties by location, price range, bedrooms, or amenities real time update .
+   - Implement filters for sorting properties by location, price range, bedrooms, or amenities with real-time updates.
 
 2. **Booking Management**:
-   - Allow users to book properties and manage bookings in a cart section and added nodemailer for sending mail on procuse to payment .
-   - Real-time updates of cart total and booking count.
-   - Users can add, remove.
+   - Allow users to book properties and manage bookings in a cart section. Nodemailer is integrated for sending emails upon booking.
+   - Real-time updates of cart total and booking count. Users can add and remove bookings.
 
 3. **Checkout Process**:
    - Calculate the total cost of booked properties.
-   - Collect booking details, including contact information and payment details and send mail to user about that property .
+   - Collect booking details, including contact information and payment details, and send mail to the user about the booked property.
 
 4. **Responsive Design**:
-   - Ensure seamless functionality and optimal viewing experience across desktop and mobile devices If i get time can make more viewing.
+   - Ensure seamless functionality and optimal viewing experience across desktop and mobile devices. Further improvements can be made to enhance viewing on various screen sizes.
 
 5. **User Authentication**:
-   - User registration and login functionalities with Clerk authentication.
-   - Display user's name and avatar when logged in.
-   - Protect routes to prevent unauthorized access.
-   - Nice tostera alert msg when user is not sign in .
+   - Implement user registration and login functionalities with Clerk authentication.
+   - Display the user's name and avatar when logged in.
+   - Protect routes to prevent unauthorized access and provide a nice toast alert message when the user is not signed in.
 
 ## Tech Stack:
 
