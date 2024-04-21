@@ -101,20 +101,7 @@ return(
          <Locate/>
          <p>{property[0]?.location} location</p>
           </div>
-          <div className="pt-8">Free 2-5 day shipping • Tool-free assembly • 30-day trial</div>
-          <div className="flex items-center justify-between pt-12">
-            <button className="flex items-center px-4 py-2 space-x-2 text-teal-500 hover:text-teal-600">
-              <div className="w-6 h-6 bg-transparent rounded-full border-2 border-teal-500 hover:bg-teal-600"></div>
-              <span>Add to Wishlist</span>
-            </button>
-            <div className="flex items-center space-x-6">
-              {[...Array(4)].map((_, index) => (
-                <button key={index}>
-                  <div className="w-6 h-6 bg-transparent rounded-full border-2 border-gray-900/20 hover:border-teal-500"></div>
-                </button>
-              ))}
-            </div>
-          </div>
+      
         </div>
       </div>
       <div className="relative flex flex-col items-end md:w-1/2">
