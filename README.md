@@ -49,6 +49,7 @@ This repository contains the solution for the Totality Frontend Challenge, which
    - Display the user's name and avatar when logged in.
    - Protect routes to prevent unauthorized access and provide a nice toast alert message when the user is not signed in.
 
+![ManagementSystem](ManagementSystem.png "ManagementSystem")
 
 ## Additional Notes
 
