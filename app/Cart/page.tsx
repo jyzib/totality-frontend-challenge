@@ -4,6 +4,7 @@ import { useContext } from "react";
 import cartcontext from "@/context/CartContext";
 import PaymentForm from "../components/PaymentPage";
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
 interface CartItem {
   _id: number;
   title: string;
@@ -20,8 +21,11 @@ interface UserDetails {
 }
 
 const CheckoutPage: React.FC = () => {
+  const router = useRouter()
   const { cart, setCart, user } = useContext(cartcontext);
-
+if(cart.length == 0){
+  router.push(`/`)
+}
   const calculateTotal = (): number => {
     return cart.reduce(
       (total: any, item: any) => total + item.price * item.quantity,
