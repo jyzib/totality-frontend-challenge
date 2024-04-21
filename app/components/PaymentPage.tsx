@@ -1,3 +1,4 @@
+'use client'
 import { useContext } from 'react';
 import cartcontext from '@/context/CartContext';
 import './Payment.css'
@@ -15,13 +16,19 @@ import {
 // import { Input } from "@/components/ui/input"
 // import { Label } from "@/components/ui/label"
 
- function PaymentForm() {
+ function PaymentForm({totalItem,price}) {
     const {user} = useContext(cartcontext)
+
+    const handelclick = async()=>{
+    const res = await fetch(`/api/Bookmail/${price}`)
+const data = await res.json()
+  
+    }
     console.log(user)
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button>Proceed to Payment</button>
+        <button onClick={()=>handelclick()} >Proceed to Payment</button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[825px]">
         <DialogHeader>
@@ -36,24 +43,11 @@ import {
           <i className="ai-cross"></i>
         </div>
 
-        {/* CARD FORM */}
         <div className="">
-          {/* <div className="header flex-between flex-vertical-center">
-            <div className="flex-vertical-center">
-              <i className="ai-bitcoin-fill size-xl pr-sm f-main-color"></i>
-              <span className="title">
-                <strong>AceCoin</strong><span>ay</span>
-              </span>
-            </div>
-            <div className="timer" data-id="timer">
-              <span>0</span><span>5</span>
-              <em>:</em>
-              <span>0</span><span>0</span>
-            </div>
-          </div> */}
+       
           <div className="card-data flex-fill flex-vertical">
 
-            {/* Card Number */}
+        
             <div className="flex-between flex-vertical-center">
               <div className="card-property-title">
                 <strong>Card Number</strong>
@@ -75,10 +69,10 @@ import {
                   </svg>
 
                   {/* Input Fields */}
-                  <input className="numbers" type="number" min="1" max="9999" placeholder="0000"/>-
-                  <input className="numbers" type="number" placeholder="0000"/>-
-                  <input className="numbers" type="number" placeholder="0000"/>-
-                  <input className="numbers" type="number" placeholder="0000" data-bound="carddigits_mock" data-def="0000"/>
+                  <input required className="numbers" type="number" min="1" max="9999" placeholder="0000"/>-
+                  <input required className="numbers" type="number" placeholder="0000"/>-
+                  <input required className="numbers" type="number" placeholder="0000"/>-
+                  <input required className="numbers" type="number" placeholder="0000" data-bound="carddigits_mock" data-def="0000"/>
                 </div>
                 <i className="ai-circle-check-fill size-lg f-main-color"></i>
               </div>
@@ -92,11 +86,11 @@ import {
               </div>
               <div className="card-property-value flex-vertical-center">
                 <div className="input-container half-width">
-                  <input className="numbers" data-bound="mm_mock" data-def="00" type="number" min="1" max="12" step="1" placeholder="MM"/>
+                  <input required className="numbers" data-bound="mm_mock" data-def="00" type="number" min="1" max="12" step="1" placeholder="MM"/>
                 </div>
                 <span className="m-md">/</span>
                 <div className="input-container half-width">
-                  <input className="numbers" data-bound="yy_mock" data-def="01" type="number" min="23" max="99" step="1" placeholder="YY"/>
+                  <input required className="numbers" data-bound="yy_mock" data-def="01" type="number" min="23" max="99" step="1" placeholder="YY"/>
                 </div>
               </div>
             </div>
@@ -109,7 +103,7 @@ import {
               </div>
               <div className="card-property-value">
                 <div className="input-container">
-                  <input id="cvc" type="password"/>
+                  <input required id="cvc" type="password"/>
                   <i id="cvc_toggler" data-target="cvc" className="ai-eye-open pointer"></i>
                 </div>
               </div>
@@ -123,7 +117,7 @@ import {
               </div>
               <div className="card-property-value">
                 <div className="input-container">
-                  <input id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text" className="uppercase" placeholder="CARDHOLDER NAME"/>
+                  <input required id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text" className="uppercase" placeholder="CARDHOLDER NAME"/>
                   <i className="ai-person"></i>
                 </div>
               </div>
@@ -135,7 +129,7 @@ import {
               </div>
               <div className="card-property-value">
                 <div className="input-container">
-                  <input id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="number" className="uppercase" placeholder="Phone Number"/>
+                  <input required id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="number" className="uppercase" placeholder="Phone Number"/>
                   <i className="ai-person"></i>
                 </div>
               </div>
@@ -185,19 +179,19 @@ import {
             <ul className="purchase-props">
               <li className="flex-between">
                 <span>Company</span>
-                <strong>Apple</strong>
+                <strong>Homily Hub</strong>
               </li>
               <li className="flex-between">
                 <span>Order number</span>
-                <strong>429252965</strong>
+                <strong>{Math.floor(Math.random()*10)*100+Math.floor(Math.random()*10) }</strong>
               </li>
               <li className="flex-between">
-                <span>Product</span>
-                <strong>MacBook Air</strong>
+                <span>Product Count</span>
+                <strong>{totalItem}</strong>
               </li>
               <li className="flex-between">
-                <span>VAT (20%)</span>
-                <strong>$100.00</strong>
+                <span>Gst (18% included)</span>
+                <strong>₹ {Number(price)*18/100}</strong>
               </li>
             </ul>
           </div>
@@ -206,8 +200,8 @@ import {
             <div className="flex-fill flex-vertical">
               <div className="total-label f-secondary-color">You have to Pay</div>
               <div>
-                <strong>549</strong>
-                <small>.99 <span className="f-secondary-color">USD</span></small>
+                <strong> ₹ {price}</strong>
+           
               </div>
             </div>
             <i className="ai-coin size-lg"></i>

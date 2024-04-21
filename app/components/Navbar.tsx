@@ -5,6 +5,7 @@ import { cn } from "@/app/utils/cn";
 import Link from "next/link";
 import { Loader } from "lucide-react";
 import  cartcontext  from "@/context/CartContext";
+import Image from "next/image";
 import { HomeIcon } from "lucide-react";
 import { useContext } from "react";
 import { ClerkLoaded,ClerkLoading ,SignedIn,SignedOut,SignInButton, UserButton } from "@clerk/nextjs";
@@ -22,7 +23,7 @@ export function Navbar() {
 
 function NavbarBody({ className }: { className?: string }) {
   const {cart} = useContext(cartcontext)
-  // const [item,setItem] = useState(cart)
+
   interface CartItem {
     _id:any;
     title: string;
@@ -44,20 +45,12 @@ function NavbarBody({ className }: { className?: string }) {
       <Link className="text-gray-700" href={'/'}>
       About Us
       </Link>
-        <MenuItem setActive={setActive} active={active} item="About Us">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
-          </div>
-        </MenuItem>
-        {/* <ShoppingCart className="text-black" /> */}
-
+      
 <div className="relative">
   <span className="text-white absolute right-[-10px] top-[-10px] bg-red-500 z-10 w-[20px] h-[20px] flex items-center justify-center rounded-full " >{cart.length}</span>
         <MenuItem setActive={setActive} active={active} item="cart">
           <div className=" text-sm grid grid-cols-1 gap-10 p-4">
+            {cart.length == 0 && <><Image src={'https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-4816550-4004141.png'} width={200} height={200} alt="cart empty" /> <p className="text-center text-lg font-bold">Cart is empty</p> </>}
             {cart.map((e:CartItem)=>{
               return (
                 <ProductItem
@@ -74,14 +67,7 @@ function NavbarBody({ className }: { className?: string }) {
           </div>
         </MenuItem>
         </div>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
+       
 
 <div className="">
     <ClerkLoading>
