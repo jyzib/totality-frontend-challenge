@@ -45,7 +45,7 @@ type props = {
           </DialogDescription>
         </DialogHeader>
         <div className="screen flex-center shadow-sm">
-      <form className="popup flex  p-lg">
+      <form className="popup flex flex-col-reverse md:flex-row h-[500px] md:h-full items-center">
         <div className="close-btn pointer flex-center p-sm">
           <i className="ai-cross"></i>
         </div>
@@ -150,7 +150,7 @@ type props = {
         </div>
 
         {/* SIDEBAR */}
-        <div className="sidebar none md:block flex-vertical ">
+        <div className="sidebar none md:block flex-vertical pl-0 md:p-[2rem]">
           <div></div>
           <div className="purchase-section flex-fill flex-vertical">
 

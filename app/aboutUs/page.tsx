@@ -2,7 +2,7 @@ import { ContactIcon, LinkedinIcon,Folder } from 'lucide-react';
 import './about.css'
 function AboutSection() {
   return (
-    <section className="about section" id="about">
+    <section className="about section mt-10" id="about">
       <div className="about__container container grid">
         <h2 className="section__title-1">
           <span>About Me.</span>

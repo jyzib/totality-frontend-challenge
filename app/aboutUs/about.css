@@ -71,7 +71,7 @@
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
-  margin-inline: 1.5rem;
+  /* margin-inline: 1.5rem; */
 }
 
 .grid {
@@ -243,10 +243,6 @@
   bottom: 1.5rem;
 }
 
-.about__info {
-  padding-left: 1.25rem;
-}
-
 .about__description {
   position: relative;
   color: var(--title-color);
@@ -280,7 +276,7 @@
 /* For small devices */
 @media screen and (max-width: 340px) {
   .container {
-    margin-inline: 1rem;
+    /* margin-inline: 1rem; */
   }
   .about__image {
     width: 180px;

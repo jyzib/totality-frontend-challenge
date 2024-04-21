@@ -69,7 +69,7 @@ if(cart.length == 0){
   };
 
   return (
-    <div className=" mx-auto  p-8 mt-[100px]">
+    <div className=" mx-auto  mt-[100px]">
       <div className="flex gap-8 flex-wrap">
         <div className="bg-white flex-2 p-6 rounded-xl ">
           <h2 className="text-2xl font-semibold mb-4 ">Cart Items</h2>
@@ -84,7 +84,7 @@ if(cart.length == 0){
                   height={150}
                 />
                 <div className="flex flex-col gap-y-5 w-full">
-                  <span className="w-[500px]">
+                  <span className="w-full md:w-[500px]">
                     <p className="text-xl font-bold">{item.title}</p>
                     <p>{item.description}</p>
                   </span>
@@ -118,7 +118,7 @@ if(cart.length == 0){
             ))}
           </ul>
         </div>
-        <div className="flex-1 flex fle-col p-6  rounded-xl justify-center items-center bg-white" >
+        <div className="flex-1 flex fle-col   rounded-xl justify-center items-center bg-white" >
           <table className="rounded-lg border border-collapse border-gray-100 p-5">
           <h2 className="font-semibold  mb-4 text-xl p-5">Order Summary</h2>
   <tbody className="p-5">

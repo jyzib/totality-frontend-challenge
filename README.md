@@ -46,8 +46,10 @@ This repository contains the solution for the Totality Frontend Challenge, which
 ## Features Implemented:
 
 1. **Property Listings**:
-   - Display various properties with images, titles, descriptions, prices, and booking buttons.
-   - Implement filters for sorting properties by location, price range, bedrooms, or amenities with real-time updates.
+   - Implement dynamic pagination for seamless navigation through dynamically loaded property listings.
+   - Enable users to browse through multiple pages of dynamically fetched properties effortlessly.
+   - Enhance user experience by providing intuitive dynamic pagination controls.
+
 
 2. **Booking Management**:
    - Allow users to book properties and manage bookings in a cart section. Nodemailer is integrated for sending emails upon booking.

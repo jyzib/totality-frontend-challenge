@@ -77,8 +77,8 @@
   
   .popup {
     position: relative;
-    width: 50em;
-    height: 100%;
+   
+
     background: #FFFFFF;
     overflow-x: hidden;
     overflow-y: auto;
@@ -99,7 +99,7 @@
   }
   .sidebar {
     width: 16.5em;
-    padding-left: 2em;
+    /* padding-left: 2em; */
     padding-top: 5em;
   }
   
