@@ -15,8 +15,11 @@ import {
 } from "@/components/ui/dialog"
 // import { Input } from "@/components/ui/input"
 // import { Label } from "@/components/ui/label"
-
- function PaymentForm({totalItem,price}) {
+type props = {
+    totalItem :Number;
+    price:Number
+}
+ function PaymentForm({totalItem,price}:props) {
     const {user} = useContext(cartcontext)
 
     const handelclick = async()=>{
@@ -24,7 +27,7 @@ import {
 const data = await res.json()
   
     }
-    console.log(user)
+  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,9 +35,9 @@ const data = await res.json()
       </DialogTrigger>
       <DialogContent className="sm:max-w-[825px]">
         <DialogHeader>
-          {/* <DialogTitle>Edit profile</DialogTitle> */}
+    
           <DialogDescription>
-            {/* Make changes to your profile here. Click save when you're done. */}
+        
           </DialogDescription>
         </DialogHeader>
         <div className="screen flex-center shadow-sm">
