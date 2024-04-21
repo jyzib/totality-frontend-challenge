@@ -1,12 +1,13 @@
 "use client";
 
 import { Card } from "./components/Card";
-
+import { ChevronLeft , ChevronRight }  from 'lucide-react'
 import { ImagesSliderDemo } from "./components/HeroSection";
 import FilterData from "./components/FilterData";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [page,setPage] = useState(1)
   const [filterdata, setfilterdata] = useState([]);
   const [list, setList] = useState([]);
 
@@ -38,7 +39,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-wrap gap-10">
-          {filterdata?.map((e,i) => {
+          {filterdata?.slice((page-1) * 8,page*8).map((e,i) => {
             return (
             
                 <Card key={i} e={e} />
@@ -46,8 +47,20 @@ export default function Home() {
             );
           })}
         </div>
-      </div>
 
+        
+
+
+
+      </div>
+      <div className="flex justify-center my-6">
+      <div className="flex items-center gap-x-3">
+          <button className="bg-gray-100 p-2 shadow-sm    flex justify-center items-center border-2 rounded-lg border-b-4 active:border-b-2 border-gray-300" onClick={()=> page > 1 && setPage(page-1)} ><ChevronLeft/> Previous</button>
+          <p className="text-lg " > {page}/{Math.round(filterdata?.length/8)}</p>
+         
+          <button className="bg-gray-100 p-2 shadow-sm   flex justify-center items-center border-2 rounded-lg border-b-4 active:border-b-2 border-gray-300"  onClick={()=> page < Math.round(filterdata?.length/8) && setPage(page+1)} >Next <ChevronRight/>  </button>
+        </div>
+        </div>
       {/* <CardHoverEffect properties={filterdata} /> */}
     </>
   );

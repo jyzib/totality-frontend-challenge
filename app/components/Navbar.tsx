@@ -39,11 +39,11 @@ function NavbarBody({ className }: { className?: string }) {
     >
      
       <Menu  setActive={setActive}>
-        <div className="flex  w-full justify-between">
+        <div className="flex  w-full justify-between ">
          
        <div className=""><h1 className="text-black" > <Link href={'/'}><HomeIcon className="text-blue-900 "  size={40}/></Link> </h1></div>
-       <div className="flex gap-x-9">
-      <Link className="text-gray-700" href={'/aboutUs'}>
+       <div className="flex gap-x-9 items-center">
+      <Link className="text-gray-700 text-sm" href={'/aboutUs'}>
       About Me
       </Link>
       
