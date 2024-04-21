@@ -61,8 +61,8 @@ const CheckoutPage: React.FC = () => {
   return (
     <div className=" mx-auto  p-8 mt-[100px]">
       <div className="flex gap-8 flex-wrap">
-        <div className="bg-gray-100 flex-2 p-6 rounded-xl ">
-          <h2 className="text-lg font-semibold mb-4">Cart Items</h2>
+        <div className="bg-white flex-2 p-6 rounded-xl ">
+          <h2 className="text-2xl font-semibold mb-4 ">Cart Items</h2>
           <ul className="flex flex-col gap-y-10">
             {cart?.map((item: CartItem) => (
               <li key={item._id} className="shadow-md rounded-lg  p-5 flex gap-x-5 flex-col md:flex-row">
@@ -79,8 +79,9 @@ const CheckoutPage: React.FC = () => {
                     <p>{item.description}</p>
                   </span>
                   <span className="text-xl font-bold">₹ {item.price}</span>{" "}
-                  <div className="flex  items-center justify-around gap-x-2">
-                    <div className="flex  items-center justify-center gap-x-2">
+                  <div className="flex  items-center justify-between gap-x-2">
+                    <p className=" text-lg text-gray-500 font-semibold" >Number of Nights - </p>
+                    <div className="flex  items-center justify-center gap-x-4">
                     <button
                       className="bg-gray-100 p-5 shadow-sm  w-5 h-5 flex justify-center items-center border-2 rounded-lg border-b-4 active:border-b-2 border-gray-300"
                       onClick={() => handleDecrease(item)}
@@ -107,29 +108,40 @@ const CheckoutPage: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className="bg-gray-100 flex-1 p-6  rounded-xl " >
-          <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-          <div className="mb-4">
-            <strong>Total Items:</strong> {cart?.length}
-          </div>
-          <div className="mb-4">
-            <strong>Total Amount:</strong> ₹ {calculateTotal().toFixed(2)}
-          </div>
-          <div className="mb-4">
-            <strong>Full Name:</strong>{" "}
-            {user?.user?.firstName + ` ` + user?.user?.lastName}
-          </div>
-          <div className="mb-4">
-            <strong>Address:</strong>{" "}
-            {user?.user?.emailAddresses?.[0]?.emailAddress}
-          </div>
-          <div className="mb-4">
-            <strong>Email:</strong>{" "}
-            {user?.user?.emailAddresses?.[0]?.emailAddress}
-          </div>
-          <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <div className="flex-1 flex fle-col p-6  rounded-xl justify-center items-center bg-white" >
+          <table className="rounded-lg border border-collapse border-gray-100 p-5">
+          <h2 className="font-semibold  mb-4 text-xl p-5">Order Summary</h2>
+  <tbody className="p-5">
+    <tr className="border-b rounded-lg border-gray-400">
+      <td className="p-2"><strong>Total Items:</strong></td>
+      {/* <td className="p-2">-</td> */}
+      <td className="p-2 text-lg font-semibold">  {cart?.length}</td>
+    </tr>
+    <tr className="border-b border-gray-400">
+      <td className="p-2"><strong  >Total Amount:</strong></td>
+      {/* <td className="p-2">-</td> */}
+      <td className="p-2 text-lg font-semibold">₹ {calculateTotal().toFixed(2)}</td>
+    </tr>
+    <tr className="border-b border-gray-400">
+      <td className="p-2"><strong>Full Name:</strong></td>
+      {/* <td className="p-2">-</td> */}
+      <td className="p-2 text-lg font-semibold">{user?.user?.firstName} {user?.user?.lastName}</td>
+    </tr>
+    {/* <tr className="border-b border-gray-400">
+      <td className="p-2"><strong>Address:</strong></td>
+      <td className="p-2 text-lg font-semibold">{user?.user?.emailAddresses?.[0]?.emailAddress}</td>
+    </tr> */}
+    <tr>
+      <td className="p-2"><strong>Email:</strong></td>
+      {/* <td className="p-2">-</td> */}
+      <td className="p-2 text-lg font-semibold w-[50px] md:w-full ">{user?.user?.emailAddresses?.[0]?.emailAddress}</td>
+    </tr>
+  </tbody>
+          <span  className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             <PaymentForm totalItem={cart?.length} price={calculateTotal().toFixed(2)} />
-          </div>
+          </span>
+</table>
+
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ export async function GET(
  const moreOption = {
   from: "Amazon.com",
   to: user?.emailAddresses?.[0]?.emailAddress,
-  subject: "Email Verification",
+  subject: "Booking Confirmation Homely Hub",
   html: `
     <html>
     <head>
@@ -76,11 +76,11 @@ export async function GET(
     </div>
     <div class="content">
         <p class="bold">Hello, ${user?.firstName}</p>
-        <p>Your booking for XYZ has been confirmed!</p>
+        <p>Your booking  been confirmed!</p>
         <p>Details:</p>
         <ul>
             <li>Date: ${new Date()}</li>
-            <li>Amount: ${slug}</li>
+            <li>Amount:₹ ${slug}</li>
           
         </ul>
       

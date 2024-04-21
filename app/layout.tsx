@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="">
 <GlobelProvider>
       <Navbar/>
-      <div className="mx-5 md:mx-10 ">
+      <div className="mx-2 md:mx-10 ">
         {children}
         </div>
         <Footer/>

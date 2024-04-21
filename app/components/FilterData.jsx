@@ -1,7 +1,8 @@
 'use client'
 import React, { useState, useEffect } from "react";
+
 import { Slider } from "@/components/ui/slider";
-import { Search } from "lucide-react";
+import { Search ,Delete} from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -138,10 +139,20 @@ const handelSearch = ()=>{
     setfilterdata(filteredList)
     console.log(filteredList)
 }
+const handelclearfilter = ()=>{
+  setFilteredList([])
+  setfilterdata(properties)
+}
+
+
+
 
   return (
-    <div className="w-full mt-6 flex justify-center">
-      <div className="w-[90%] bg-white p-4 rounded-sm md:rounded-full flex justify-between flex-col shadow-lg md:flex-row">
+    <>
+      <h1 className=" text-2xl font-semibold w-[90%] m-auto mt-5 text-center text-teal-700" >
+Apply <span className="font-bold text-orange-500">filters</span>  to refine your home search for the best results.</h1>
+    <div id="property" className="w-full mt-6 flex justify-center">
+      <div className="w-[90%] bg-white p-4 rounded-lg md:rounded-full flex justify-between flex-col shadow-lg md:flex-row">
         <div className=" ">
           <p className="text-gray-400 pl-2">CITY</p>
           <Select onValueChange={(e) => handelCity(e)}>
@@ -203,17 +214,22 @@ const handelSearch = ()=>{
         </div>
         <hr className="border-gray-400 h-full border-1 " />
         <div className=" items-center px-2">
-          <div className=" h-full text-black flex justify-between items-center gap-x-7">
-            <h2 className="text-blue-300 text-lg font-bold">
+          <div className=" h-full text-black flex justify-between items-center gap-x-7 mt-5 md:mt-0 mb-5 md:mb-0 ">
+            <h2 className="text-blue-300 text-sm md:lg text font-bold  ">
               {filteredList.length} houses available
             </h2>
+            <div onClick={handelclearfilter} className="bg-black p-3 rounded-full cursor-pointer">
+              <Delete className="text-[#9BF8F8]" />
+            </div>
             <div onClick={handelSearch} className="bg-black p-3 rounded-full cursor-pointer">
               <Search className="text-[#9BF8F8]" />
             </div>
+            
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 };
 

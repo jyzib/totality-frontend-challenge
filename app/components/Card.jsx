@@ -33,7 +33,7 @@ function tostdisplay(ele){
   return (
     <div className="w-[300px] bg-white p-2 rounded-md">
       <div className="h-[200px] overflow-hidden object-contain">
-      <Link href={`/${e._id}`} >
+      
         <Image
           className="rounded-md"
           src={e.images[0]}
@@ -42,7 +42,7 @@ function tostdisplay(ele){
           layout="responsive"
           alt={e.title}
         />
-      </Link>
+   
       </div>
       <div className="flex flex-col gap-y-2">
         <h1 className="text-gray-800 font-bold">{e.title}</h1>

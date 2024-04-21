@@ -11,7 +11,8 @@ import { useContext } from "react";
 import { ClerkLoaded,ClerkLoading ,SignedIn,SignedOut,SignInButton, UserButton } from "@clerk/nextjs";
 import UserData from './UserData'
 export function Navbar() {
- 
+  console.log('%cWelcome to My Website!', 'font-size: 20px; color: #3498db; font-weight: bold;');
+  console.log('%cThanks for visiting!', 'font-size: 16px; color: #2ecc71;');
   // console.log(g)
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -42,8 +43,8 @@ function NavbarBody({ className }: { className?: string }) {
          
        <div className=""><h1 className="text-black" > <Link href={'/'}><HomeIcon className="text-blue-900 "  size={40}/></Link> </h1></div>
        <div className="flex gap-x-9">
-      <Link className="text-gray-700" href={'/'}>
-      About Us
+      <Link className="text-gray-700" href={'/aboutUs'}>
+      About Me
       </Link>
       
 <div className="relative">

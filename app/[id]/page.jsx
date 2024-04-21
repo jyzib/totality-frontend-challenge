@@ -49,10 +49,10 @@ const Page = ({params}) => {
 
 
   return (
-    <main className="pt-10 pb-12 pl-20 ">
+    <main className="pt-10 pb-12 px-2 md:px-0 md:pl-20 ">
    {loading && <div className='fixed left-0 right-0 top-0 bottom-0 bg-gray-200/50 flex justify-center items-center' ><Loader className='animate-spin w-[60px]' /></div>
    }
-    <div className=" mt-20 flex flex-col md:flex-row">
+    <div className=" mt-20 flex flex-col-reverse md:flex-row ">
       <div className="flex flex-col md:w-1/2">
         <div className="max-w-md">
           
@@ -71,7 +71,7 @@ const Page = ({params}) => {
             </div>
           </div>
           <p className="pt-8 leading-relaxed">{property[0]?.description}</p>
-          <div className="flex bg-white gap-x-5 w-[40%] mt-5 p-4 rounded-2xl shadow-xl">
+          <div className="flex bg-white gap-x-5 w-full md:w-[40%] mt-5 p-4 rounded-2xl shadow-xl">
          <Home/>
          <p>{property[0]?.bedrooms} BEDROOMS</p>
           </div>
@@ -119,14 +119,14 @@ return(
       </div>
       <div className="relative flex flex-col items-end md:w-1/2">
        
-        <div className="flex flex-col gap-6 ">
+        <div className="flex flex-col gap-y-6 justify-center ">
         <div className=" w-[80%] ">
         <Image className='rounded-xl' src={property[0]?.images[0]} width={200} height={100}  alt={'c'}    layout="responsive" />
         </div>
         {/* <div className="absolute w-[440px] h-[250px] bg-gradient-to-r from-transparent to-teal-600/20 top-24 right-0"></div> */}
-        <div className="flex pr-20 space-x-4">
+        <div className="flex pr:0 md:pr-20 space-x-4">
           {property[0]?.images.map((e, index) => (
-            <div key={index} className="w-24 h-24 pl-1 border-2 cursor-pointer border-gray-900/10 hover:border-teal-500">
+            <div key={index} className="w-24 h-20 pl-1 flex justify-center items-center border-2 cursor-pointer border-gray-900/10 hover:border-teal-500">
            
               <Image className='h-full' src={property[0]?.images[0]} width={200} height={300}  alt={'c'}    layout="responsive" />
             </div>

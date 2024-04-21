@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import cartcontext from '@/context/CartContext';
 import './Payment.css'
 import Image from 'next/image';
-
+import { useToast } from "@/components/ui/use-toast"
 import {
   Dialog,
   DialogContent,
@@ -20,18 +20,22 @@ type props = {
     price:String
 }
  function PaymentForm({totalItem,price}:props) {
+  const { toast } = useToast()
     const {user} = useContext(cartcontext)
 
     const handelclick = async()=>{
-    const res = await fetch(`/api/Bookmail/${price}`)
-const data = await res.json()
+
+      alert('Booking Confirmation mail has been sent to your mail Id')
+     
+          const res = await fetch(`/api/Bookmail/${price}`)
+      const data = await res.json()
   
     }
   
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button onClick={()=>handelclick()} >Proceed to Payment</button>
+        <button className='p-5' onClick={()=>handelclick()} >Proceed to Payment</button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[825px]">
         <DialogHeader>

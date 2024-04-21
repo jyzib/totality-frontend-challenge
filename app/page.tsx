@@ -13,7 +13,7 @@ export default function Home() {
   const getProperty = async () => {
     const response = await fetch("/api/PropertyListings");
     const data = await response.json();
-    console.log(data)
+  
     setfilterdata(data?.data);
     setList(data?.data);
   };
@@ -28,13 +28,13 @@ export default function Home() {
       <FilterData properties={list} setfilterdata={setfilterdata} />
 
       <div className="w-full mx-auto px-8 mt-11">
-        <div className="md:ml-5 flex flex-col gap-y-3">
+        <div className="md:ml-5 flex flex-col gap-y-3 my-5 px-0 md:px-16">
           {" "}
-          <h1 className="text-3xl text-slate-700 font-semibold">
-            Spacein Exclusives
+          <h1 className="text-3xl text-teal-700 font-bold  text-center">
+          Explore exclusive spaces 
           </h1>
-          <p className=" text-slate-700">
-            Discover unique spaces not listed elsewhere.
+          <p className=" text-slate-700 text-center ">
+          Find your perfect property for rent! Whether you're looking for a cozy cabin in the woods, a luxurious villa with a pool, or anything in between, Totallity Rentals has you covered. Start your search today!
           </p>
         </div>
         <div className="flex flex-wrap gap-10">
