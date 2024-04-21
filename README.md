@@ -3,6 +3,9 @@
 
 This repository contains the solution for the Totality Frontend Challenge, which aims to develop a property rental platform with essential features using React. The challenge includes implementing property listings, booking management, checkout process, and ensuring responsive design.
 
+## Property Management System Design
+![ManagementSystem](ManagementSystem.png "ManagementSystem")
+
 
 ## Tech Stack
 
@@ -49,7 +52,7 @@ This repository contains the solution for the Totality Frontend Challenge, which
    - Display the user's name and avatar when logged in.
    - Protect routes to prevent unauthorized access and provide a nice toast alert message when the user is not signed in.
 
-![ManagementSystem](ManagementSystem.png "ManagementSystem")
+
 
 ## Additional Notes
 
