@@ -17,7 +17,7 @@ import {
 // import { Label } from "@/components/ui/label"
 type props = {
     totalItem :Number;
-    price:Number
+    price:String
 }
  function PaymentForm({totalItem,price}:props) {
     const {user} = useContext(cartcontext)
