@@ -42,10 +42,7 @@ function AboutSection() {
             <a href="https://www.linkedin.com/in/jazib-zaidi-671975259/" target="_blank" rel="noopener noreferrer" className="button__ghost">
               <LinkedinIcon />
             </a>
-            <a href="https://drive.google.com/file/d/1eqCXNlJcudQjTioy3B1udXYxTNyEnnCg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="button__ghost">
-                Resume
-              <Folder />
-            </a>
+           
           </div>
         </div>
       </div>
