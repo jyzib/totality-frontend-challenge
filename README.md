@@ -1,5 +1,5 @@
-![homelyhub](app-img.png "homelyhub")
 # Totality Frontend Challenge
+![homelyhub](app-img.png "homelyhub")
 
 This repository contains the solution for the Totality Frontend Challenge, which aims to develop a property rental platform with essential features using React. The challenge includes implementing property listings, booking management, checkout process, and ensuring responsive design.
 
@@ -22,25 +22,6 @@ This repository contains the solution for the Totality Frontend Challenge, which
 - **[Tailwind CSS Animate](https://github.com/bentzibentz/tailwindcss-animatecss)**: Tailwind CSS plugin for adding animation utilities.
 - **[shadcn](https://ui.shadcn.com/)**: A UI library for adding components.
 - **[aceternity](https://aceternity.io/)**: A UI library for enhancing component accessibility and usability.
-
-## Project Structure:
-
-│
-├── frontend/ # Frontend codebase
-│ ├── components/ # React components
-│ ├── pages/ # Next.js pages
-│ ├── public/ # Public assets
-│ └── ...
-│
-├── backend/ # Backend codebase
-│ ├── api/ # Controllers for handling HTTP requests
-│ ├── model/ # MongoDB models
-│ ├── routes/ # API routes
-│ ├── _action/ # Utility functions
-│ └── ...
-│
-├── README.md # Project overview, setup instructions, and notes
-└── ...
 
 
 
