@@ -16,7 +16,7 @@ import {
 // import { Input } from "@/components/ui/input"
 // import { Label } from "@/components/ui/label"
 type props = {
-    totalItem :Number;
+    totalItem :any;
     price:String
 }
  function PaymentForm({totalItem,price}:props) {
