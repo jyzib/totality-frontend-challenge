@@ -44,6 +44,9 @@ if(cart.length == 0){
           : cartItem
       );
     }
+    if(cart.length == 0){
+      router.push(`/`)
+    }
     setCart(newCart);
   };
  
@@ -51,6 +54,9 @@ if(cart.length == 0){
     let newCart = [...cart];
       newCart = newCart.filter((cartItem) => cartItem._id !== item._id);
       setCart(newCart);
+      if(cart.length == 0){
+        router.push(`/`)
+      }
   }
 
   const handleIncrease = (item: CartItem): void => {
@@ -78,7 +84,7 @@ if(cart.length == 0){
                   height={150}
                 />
                 <div className="flex flex-col gap-y-5 w-full">
-                  <span>
+                  <span className="w-[500px]">
                     <p className="text-xl font-bold">{item.title}</p>
                     <p>{item.description}</p>
                   </span>
