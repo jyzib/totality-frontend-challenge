@@ -49,7 +49,7 @@ const FilterData = ({ properties,setfilterdata }) => {
         // Add a new filter with the selected city
         setFilterList(selectedCity !== "Select a city" ? [{ city: selectedCity }] : []);
     }
-    console.log(filterList)
+  
 };
 
   
@@ -121,7 +121,7 @@ const handelAmenities = (selectedAmenity) => {
         filteredList = filteredList.filter(property => property.bedrooms.toString() === filter.rooms);
       }
     });
-  console.log(filterList)
+  
     // Filter by price range
     filteredList = filteredList.filter(property => parseInt(property.price) <= rangeval);
   
@@ -137,7 +137,7 @@ const handelAmenities = (selectedAmenity) => {
 
 const handelSearch = ()=>{
     setfilterdata(filteredList)
-    console.log(filteredList)
+   
 }
 const handelclearfilter = ()=>{
   setFilteredList([])

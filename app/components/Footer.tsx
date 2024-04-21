@@ -352,7 +352,7 @@ const Footer = () => {
         </p>
 
         <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-          &copy; 2022 Company Name
+          &copy; 2023 Homely hub 
         </p>
       </div>
     </div>
