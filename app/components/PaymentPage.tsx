@@ -35,7 +35,7 @@ type props = {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className='p-5' onClick={()=>handelclick()} >Proceed to Payment</button>
+        <button className='m-5 text-sm' onClick={()=>handelclick()} >Checkout</button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[825px]">
         <DialogHeader>
@@ -124,7 +124,7 @@ type props = {
               </div>
               <div className="card-property-value">
                 <div className="input-container">
-                  <input required id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text" className="uppercase" placeholder="CARDHOLDER NAME"/>
+                  <input required id="name" data-bound="name_mock"  type="text" className="uppercase" placeholder="CARDHOLDER NAME"/>
                   <i className="ai-person"></i>
                 </div>
               </div>

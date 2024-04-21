@@ -69,7 +69,7 @@ if(cart.length == 0){
   };
 
   return (
-    <div className=" mx-auto  mt-[100px]">
+    <div className=" mx-auto  mt-[150px]">
       <div className="flex gap-8 flex-wrap">
         <div className="bg-white flex-2 p-6 rounded-xl ">
           <h2 className="text-2xl font-semibold mb-4 ">Cart Items</h2>
